@@ -55,6 +55,10 @@ def solution():
     print(f'Accepted Values = {accepted_values}\nSum of these values = {sum(accepted_values)}')
 
 # Execution
-import timeit
-timeit
 solution()
+
+# Output
+'''
+Accepted Values = [4150, 4151, 54748, 92727, 93084, 194979]
+Sum of these values = 443839
+'''
