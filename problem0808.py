@@ -61,7 +61,12 @@ batch_size = 500
 
 # Batch Run function
 def run_batch(accepted_values, offset, batch_size):
-
+    '''
+    This is the batch running function, it takes in a list of already accepted values, as well as an offset and 
+    batch size. It will run the function from the offset to offset+batch size, before adding the newly found
+    accepted values to the list of already accepted values
+    It will return this accepted values list, as well as the updated offset (= offset + batch_size)
+    '''
     square_of_primes = [
         i**2 for i in range(offset,offset+batch_size) if is_prime(i) and not is_palindrome(i**2)
     ]
