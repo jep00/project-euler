@@ -1,4 +1,4 @@
-'''
+"""
 Project Euler -- Project  0030
 
 Problem:
@@ -16,49 +16,52 @@ Problem:
     Find the sum of all the numbers that can be written as the sum of fifth powers of their digits.
 
 
-'''
+"""
 
-# Helper Functions
+
+# Helper Functions
 def split_value(x: int) -> list:
-    ''' Takes input integer x, and splits into the consituent values '''
+    """Takes input integer x, and splits into the consituent values"""
     l = [int(i) for i in str(x)]
     return l
 
+
 def power_list(l: list, p: int) -> list:
-    ''' Raises every value in a list to a specified power '''
+    """Raises every value in a list to a specified power"""
     l = [v**p for v in l]
     return l
 
+
 def valid_value_check(l: list, v: int) -> bool:
-    ''' Checks if the sum of a list of integers l is equal to a value v '''
+    """Checks if the sum of a list of integers l is equal to a value v"""
     if sum(l) == v:
         return True
     else:
         return False
 
+
 # Execution Function
 def solution():
-    '''
+    """
     Brute force method is used
-    '''
+    """
     accepted_values = []
-    for i in range(10, 5*9**5+1):
-        if valid_value_check(
-            l = power_list(
-                split_value(i), p=5
-            ), 
-            v = i):
+    for i in range(10, 5 * 9**5 + 1):
+        if valid_value_check(l=power_list(split_value(i), p=5), v=i):
             accepted_values.append(i)
         else:
             pass
 
-    print(f'Accepted Values = {accepted_values}\nSum of these values = {sum(accepted_values)}')
+    print(
+        f"Accepted Values = {accepted_values}\nSum of these values = {sum(accepted_values)}"
+    )
 
-# Execution
+
+# Execution
 solution()
 
 # Output
-'''
+"""
 Accepted Values = [4150, 4151, 54748, 92727, 93084, 194979]
 Sum of these values = 443839
-'''
+"""

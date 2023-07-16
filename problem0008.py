@@ -1,4 +1,4 @@
-#Problem 8
+# Problem 8
 """
 The four adjacent digits in the 1000-digit number (defined in soln) that have the
 greatest product are 9 × 9 × 8 × 9 = 5832.
@@ -32,21 +32,21 @@ number = """
 """
 
 number = list(number)
-while number.count('\n') > 0:
-    number.remove('\n')
+while number.count("\n") > 0:
+    number.remove("\n")
 
 number = [int(val) for val in number]
 
 i = 0
 greatestProduct = 0
-for k in range(len(number)-12):
+for k in range(len(number) - 12):
     for j in range(i, i + 14):
-        subgroup = number[i:i+13]
+        subgroup = number[i : i + 13]
         temp = np.product(subgroup)
-        
+
     if temp > greatestProduct:
         greatestProduct = temp
-        
+
     i = i + 1
 
 print(greatestProduct)
